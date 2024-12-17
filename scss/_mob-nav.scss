@@ -1,5 +1,5 @@
-// Variables
-// Black
+//VARIABLES
+//Black
 $black-100: rgba(0, 0, 0, 1);
 $black-90: rgba(0, 0, 0, 0.9);
 $black-80: rgba(0, 0, 0, 0.8);
@@ -11,7 +11,7 @@ $black-30: rgba(0, 0, 0, 0.3);
 $black-20: rgba(0, 0, 0, 0.2);
 $black-10: rgba(0, 0, 0, 0.1);
 
-// White
+//White
 $white-100: rgba(255, 255, 255, 1);
 $white-90: rgba(255, 255, 255, 0.9);
 $white-80: rgba(255, 255, 255, 0.8);
@@ -23,10 +23,10 @@ $white-30: rgba(255, 255, 255, 0.3);
 $white-20: rgba(255, 255, 255, 0.2);
 $white-10: rgba(255, 255, 255, 0.1);
 
-// Invisible
+//Invisible
 $transparent: rgba(255, 255, 255, 0);
 
-// Colors
+//COLORS
 $light-grey: #e0dfe1;
 $light-grey-A: #f0f0f0;
 $grey: #9f9e9f;
@@ -34,21 +34,21 @@ $dark-grey: #222222;
 $white: #ffffff;
 $blue: #0190ec;
 
-// BMW
+//BMW
 $light-blue: #6295ca;
 $dark-blue: #13274c;
 $red: #d1253b;
+$yellow: #f7df1e;
 
-// Animation stuff
+//ANIMATIONS stuff
 $hover: all 0.2s ease-in;
 $slide: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
 $slide-delay: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
 $slide-slow: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 $zoom: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 $zoom-slow: all 2.4s cubic-bezier(0.55, 0, 0.1, 1);
-
-// Mixins
-// Adds a browser preix to the property
+//MIXINS
+// ADDS A BROWSER PREFIX TO THE PROPERTY
 @mixin css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
   -khtml-#{$property}: #{$value};
@@ -57,11 +57,11 @@ $zoom-slow: all 2.4s cubic-bezier(0.55, 0, 0.1, 1);
   -o-#{$property}: #{$value};
   #{$property}: #{$value};
 }
-// Transform
+// TRANSFORM
 @mixin transform($params) {
   @include css3-prefix('transform', $params);
 }
-// Font import
+//FONT IMPORT
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
 
 body {
@@ -71,6 +71,7 @@ body {
   text-align: center;
 }
 
+//
 .container {
   background-color: $dark-grey;
   margin: 0 auto;
@@ -87,7 +88,7 @@ body {
   -webkit-transform: scale(1);
 }
 
-.menu-trigger, 
+.menu-trigger,
 .close-trigger {
   position: absolute;
   top: 32px;
@@ -142,14 +143,12 @@ body {
   &.top {
     width: 50%;
   }
-
   &.middle {
     &:before {
       left: auto;
       right: 0;
     }
   }
-
   &.bottom {
     width: 50%;
     margin-left: 50%;
@@ -178,9 +177,9 @@ body {
   &.left {
     transform: translateX(100px) translateY(-100px) rotate(-45deg);
   }
-
   &.right {
     transform: translateX(-100px) translateY(-100px) rotate(45deg);
+    top: -3px;
   }
 }
 
@@ -201,22 +200,20 @@ body {
     text-align: center;
     line-height: 62px;
     font-size: 72px;
-    color: $white-100;
-    // yellow
+    color: $yellow;
   }
 }
 
 .logo-title {
   position: absolute;
-  top: -10px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   color: $dark-grey;
   font-size: 32px;
-  line-height: 82px;
+  line-height: 82x;
 }
-
 .logo-badge {
   position: absolute;
   display: block;
@@ -243,39 +240,37 @@ body {
 .inner-container {
   z-index: 20;
 }
-
 .menu-container {
   display: flex;
   align-items: center;
 }
-
 .menu {
   display: block;
   width: 100%;
   padding: 20%;
-  // opacity: 0;
-  // visibility: hidden;
+  //opacity: 0;
+  //visibility: hidden;
 
   li {
     text-align: left;
     display: block;
     padding: 15px 0;
   }
-  
+
   a {
     text-decoration: none;
     color: $dark-grey;
     display: inline-block;
     padding: 10px 0;
     position: relative;
-  
+
     &:hover {
       &:before {
         opacity: 1;
         transform: translateX(0px);
       }
     }
-  
+
     &:before {
       content: '';
       display: block;
@@ -289,7 +284,7 @@ body {
       transform: translateX(100px);
       transition: $slide;
     }
-  }  
+  }
 }
 
 .menu-bg {
@@ -298,6 +293,7 @@ body {
   width: 200%;
   left: -53%;
   top: -25%;
+  //top: -25%;
   height: 40%;
   background-color: $white-100;
 
@@ -306,16 +302,14 @@ body {
     left: -53%;
     transform: rotate(-45deg) scaleY(0);
   }
-
   &.top {
     left: -34%;
     top: 0;
     transform: rotate(-45deg) translateY(-152%);
-    // top: -25%;
+    //top: -25%;
   }
-
   &.bottom {
-    // bottom: 0;
+    //bottom: 0;
     top: 105%;
     transform: rotate(-45deg) translateY(25%);
     left: -20%;
